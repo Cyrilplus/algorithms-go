@@ -2,18 +2,14 @@ package sorted
 
 
 func SelectSorted(data Interface) {
-	length := data.Len() - 1
-	for i := 0; i < length; i++ {
+	length := data.Len()
+	for i, max := 0, length - 1; i < max; i++ {
 		minIndex := i
-		for j := i; j < length; j++ {
-			if data.Less(j + 1, minIndex) {
-				minIndex = j + 1
+		for j := i + 1; j < length; j++ {
+			if data.Less(j, minIndex) {
+				minIndex = j
 			}
 		}
 		data.Swap(minIndex, i)
 	}
-}
-
-func InsertSorted(data Interface) {
-	
 }
