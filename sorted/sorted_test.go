@@ -36,3 +36,29 @@ func TestInsertSorted(t *testing.T) {
 		t.Error("failed")
 	}
 }
+
+func TestShellSorted(t *testing.T) {
+	testArr := Arr([]int{4, 3, 2, 0, 10, 23, 5, 0, 1, -10})
+	t.Log(testArr)
+	ShellSorted(testArr)
+	t.Log(testArr)
+	if sort.IsSorted(testArr) {
+		t.Log("successfully")
+	} else {
+		t.Log(testArr)
+		t.Error("failed")
+	}
+}
+
+func TestMergeSorted(t *testing.T) {
+	testArr := Arr([]int{4, 3, 2, 0, 10, 23, 5, 0, 1, -10})
+	t.Log(testArr)
+	MergeSorted(testArr, 0, testArr.Len() - 1)
+	t.Log(testArr)
+	if sort.IsSorted(testArr) {
+		t.Log("successfully")
+	} else {
+		t.Log(testArr)
+		t.Error("failed")
+	}
+}
