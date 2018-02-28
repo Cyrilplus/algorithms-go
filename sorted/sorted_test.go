@@ -62,3 +62,16 @@ func TestMergeSorted(t *testing.T) {
 		t.Error("failed")
 	}
 }
+
+func TestMergeSortedNRecursion(t *testing.T) {
+	testArr := Arr([]int{4, 3, 2, 0, 10, 23, 5, 0, 1, -10})
+	t.Log(testArr)
+	MergeSortedNRecursion(testArr)
+	t.Log(testArr)
+	if sort.IsSorted(testArr) {
+		t.Log("successfully")
+	} else {
+		t.Log(testArr)
+		t.Error("failed")
+	}
+}
